@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    padding: 1rem 3rem;
+    background: $gradient;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h1, h2 {
+    font-family: $title-font;
+}
+
+h1, h2, p {
+    color: $font-color;
+}
+
+p, button {
+    font-family: $paragraph-font;
+}
+
+textarea {
+    resize: none;
+}

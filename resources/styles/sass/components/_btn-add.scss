@@ -1,0 +1,19 @@
+.btn-character-add {
+    display: block;
+    margin: 40px auto;
+    padding: 0.5rem 2.5rem;
+    font-family: $paragraph-font;
+    border-radius: 10px;
+    background-color: $blue-button;
+    color:$font-color;
+    letter-spacing: 0.1rem;
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border: none;
+    cursor: pointer;
+    box-shadow: 15px 13px 26px -1px rgba(0, 0, 0, 0.5);
+    font-size: 1rem;
+    font-weight: 700;
+  }

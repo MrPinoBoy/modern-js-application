@@ -1,0 +1,30 @@
+.input-character-name, .input-character-small-description, .input-character-long-description {
+    margin: 0.5rem 0rem;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #727071;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+}
+
+.input-character-name {
+    font-family: $title-font;
+    font-size: 2rem;
+}
+
+.text-input-container {
+    position: relative;
+    text-align: right;
+    width: 100%;
+}
+
+.max-character-display {
+    position: absolute;
+    color: white;
+    bottom: 1rem;
+    right: 1rem;
+    font-family: $paragraph-font;
+    font-size: 0.65rem;
+    font-style: italic;
+}

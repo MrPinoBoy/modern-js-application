@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Character Manager</title>
+    <link rel="stylesheet" href="resources/styles/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Character Manager</h1>
+            <input type="Text" placeholder="Search character" class="search-bar" id="search-bar">
+        </header>
+        <section id="target" class="character-mini-card-container">
+            <div id="loading" class="loading" style="width: 50px; height: 50px; background-color: red;"></div>
+            <template id="tpl-character">
+                <div class="character-card">
+                    <div class="character-info">
+                        <img id="character-img" class="character-img" src="" alt="">
+                        <h2 id="character-name" class="character-name"></h2>
+                        <p id="character-small-description" class="character-small-description"></p>
+                    </div>
+                    <form id="formGet"><!-- En utilisant un form autour du bouton, on le transforme en lien avec comme url celui défini dans le fichier script.js à la ligne 22 -->
+                        <button class="btn-character-view">See character</button>
+                    </form>
+                </div>
+            </template>
+        </section>
+        <button id="btn-character-add" class="btn-character-add">Add a new character to the collection</button>
+    </main>
+<script type="module" src="resources/javascript/script.js"></script>
+    
+</body>
+</html>

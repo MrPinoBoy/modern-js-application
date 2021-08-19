@@ -1,0 +1,53 @@
+@media screen and (max-width:750px) {
+    
+}
+
+@media screen and (max-width:600px) {
+    header {
+        flex-direction: column;
+    }
+
+    .search-bar {
+        margin-left: 0rem;
+        margin-top: 1rem;
+    }
+
+    .character-card-container-single {
+        padding: 1.5rem 0;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .body-single {
+        padding: 1rem 1rem;
+    }
+
+}
+
+@media screen and (max-width: 475px) {
+    .character-name-single {
+        font-size: 1.5rem;
+    }
+
+    .character-name-single, .character-small-description-single, .character-long-description-single {
+        margin: 1rem;
+    }
+}
+
+@media screen and (max-width:375px) {
+    body {
+        padding: 1rem 1rem;
+    }
+    
+    .character-img-single {
+        width: $small-image-size;
+        height: $small-image-size;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+    }
+}

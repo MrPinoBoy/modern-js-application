@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/styles/css/style.css">
+    <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
+    <title>New Character</title>
+</head>
+<body>
+    <header>
+        <h1>Character manager</h1>
+    </header>
+    <main>
+        <section class="character-card-container">
+            <div class="preview-container" id="image-input-container">
+                <img id="character-image-preview" class="character-image-preview" src="" alt="">
+            </div>
+            <div class="image-input-container" id="image-input-container-text">
+                <input id="character-image-update" class="character-image-upload" type="file" accept="image/jpeg, image/png">
+                <div class="character-image-upload-text">Upload Image</div>
+            </div>
+            <div class="text-input-container">
+                <textarea id="update-character-name" class="input-character-name" type="text" maxlength="20" placeholder="Enter a name"></textarea>
+                <div id="max-character-name" class="max-character-name max-character-display"></div>
+            </div>
+            <div class="text-input-container">
+                <textarea id="update-character-small-description" class="input-character-small-description" type="text" maxlength="70" placeholder="Enter a short description"></textarea>
+                <div id="max-character-small-description" class="max-character-small-description max-character-display"></div>
+            </div>
+            <div class="text-input-container">
+                <div id="update-character-long-description" class="input-character-long-description" type="text" maxlength="350" placeholder="Enter a long description"></div>
+                <div id="max-character-long-description" class="max-character-long-description max-character-display"></div>
+            </div>
+        <div class="button-container">
+            <button id="button-save" class="button-character-update">Save changes</button><!-- Quand on a clické, renvoie à index.html -->
+            <button id="button-delete" class="button-character-delete">Delete character</button>
+        </div>
+    </section>
+    </main>
+    <script src="https://cdn.quilljs.com/1.0.0/quill.js"></script>
+    <script src="../resources/javascript/update.js"></script>
+      <script>
+        var editor = new Quill('#update-character-long-description', {
+          theme: 'snow'
+        });
+        editor.root.dataset.placeholder = "Enter a long description here"
+      </script>
+</body>
+</html>

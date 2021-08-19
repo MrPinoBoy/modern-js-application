@@ -1,0 +1,109 @@
+.character-card-container {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: $card-color;
+    border-radius: 30px;
+    max-width: 1460px;
+    margin: auto;
+    align-items: center;
+    padding: 3rem 2rem;
+    box-shadow: 15px 13px 26px -1px rgba(0, 0, 0, 0.5);
+    word-break: break-all;
+}
+
+.character-img-single {
+    width: $big-image-size;
+    height: $big-image-size;
+    border-radius: 50%;
+}
+
+.character-name-single {
+    font-size: 2rem;
+    margin: 3rem;
+}
+
+.character-small-description-single {
+    font-size: 0.75rem;
+    font-style: italic;
+    font-weight: 100;
+    margin: 0 3rem;
+}
+
+.character-long-description-single {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 3rem;
+}
+
+.button-container {
+    margin-top: auto;
+}
+
+.button-character-update, .button-character-delete {
+    border-radius: 10px;
+    border: none;
+    margin: 0.5rem;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-style: italic;
+    width: 8rem;
+}
+
+.button-character-update {
+    background-color: $blue-button;
+    color: $font-color;
+}
+
+.button-character-delete {
+    background-color: $card-color;
+    color: $red-button;
+    border: 1px solid $red-button;
+}
+
+.preview-container{
+    position: relative;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.character-image-preview {
+    width: $big-image-size;
+    height: $big-image-size;
+    border: 2px rgba(255, 255, 255, 0.75) solid;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.preview-text {
+    font-family: $paragraph-font;
+    font-weight: 500;
+    font-style: italic;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+}
+
+.image-input-container {
+    position: relative;
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+}
+
+.character-image-upload {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.character-image-upload-text {
+    font-family: $paragraph-font;
+    font-style: italic;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+}
