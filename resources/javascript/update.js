@@ -1,3 +1,4 @@
+import moment from "moment";
 (async () => {
   const updatedImage = document.getElementById("character-image-update");
   const preview = document.getElementById("character-image-preview");
@@ -29,9 +30,9 @@
     const rawData = await fetch(
       `https://character-database.becode.xyz/characters/${currentId[1]}`
     );
-    return (currentCharacter = await rawData.json());
+    return await rawData.json();
   };
-  await fetcher();
+  const currentCharacter = await fetcher();
 
   textAreas.forEach((textArea) => {
     textArea.addEventListener("input", autoResize, false);
@@ -42,7 +43,7 @@
     this.style.height = this.scrollHeight + "px";
   }
 
-  const retrievedInfoDisplayer = () => {
+  const retrievedInfoDisplayer = (currentCharacter) => {
     updatedName.value = currentCharacter.name;
     updatedSmallDescription.value = currentCharacter.shortDescription;
     updatedLongDescription.children[0].textContent =
@@ -93,7 +94,7 @@
     reader.readAsDataURL(file);
   };
 
-  retrievedInfoDisplayer();
+  retrievedInfoDisplayer(currentCharacter);
 
   imageUploader.addEventListener("click", () => {
     document.getElementById("character-image-update").click();
@@ -132,8 +133,11 @@
       updatedSmallDescription.value != "" &&
       updatedLongDescription.value != ""
     ) {
-      updatedCharInfoInputer();
-      await postUpdatedData(currentId[1]);
+      if (typeof Storage !== "undefined") {
+        window.localStorage.date = moment();
+      }
+      updatedCharInfoInputer(updatedCharacter);
+      await postUpdatedData(currentId[1], updatedCharacter);
       document.location.href = "/index.html";
     } else {
       alert("erreur");

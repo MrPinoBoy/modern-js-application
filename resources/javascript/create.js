@@ -1,10 +1,14 @@
-import {} from "./index.js";
+import {
+  readImage,
+  letterCounter,
+  postNewData,
+  newCharInfoInputer,
+} from "./index.js";
+import moment from "moment";
 
 (async () => {
   const allInputs = document.querySelectorAll("input");
   const newImage = document.getElementById("character-image-upload");
-  const preview = document.getElementById("character-image-preview");
-  const previewText = document.getElementById("preview-text");
   const newName = document.getElementById("input-character-name");
   const newSmallDescription = document.getElementById(
     "input-character-small-description"
@@ -84,7 +88,7 @@ import {} from "./index.js";
 
   newImage.addEventListener("change", async function (event) {
     let file = event.target.files; //on va chercher le fichier qu'on a input qui est enregistré comme une array
-    await readImage(file[0]); //on utilise le fichier dans la fonction
+    await readImage(file[0], newCharacter); //on utilise le fichier dans la fonction
   });
 
   letterCounter(maxCharacterNameDisplay, newName);
@@ -112,8 +116,10 @@ import {} from "./index.js";
       newLongDescription.value != "" &&
       newImage.value != ""
     ) {
-      newCharInfoInputer();
-      await postNewData();
+      localStorage.clear();
+      localStorage.date = moment();
+      newCharInfoInputer(newCharacter);
+      await postNewData(newCharacter);
       document.location.href = "../index.html";
     } else {
       alert("erreur");

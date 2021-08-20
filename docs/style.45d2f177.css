@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  padding: 1rem 3rem;
+  background: linear-gradient(to right, #4b4ea2, #e14444);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h1, h2 {
+  font-family: "Permanent Marker", cursive;
+}
+
+h1, h2, p {
+  color: white;
+}
+
+p, button {
+  font-family: "Roboto", sans-serif;
+}
+
+textarea {
+  resize: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid white;
+  padding: 1rem 0;
+  max-width: 1460px;
+  margin: auto;
+  margin-bottom: 2.5rem;
+}
+
+.search-bar {
+  display: block;
+  border-radius: 10px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  padding: 0 1rem;
+  height: 2.5rem;
+  margin-left: 1.5rem;
+}
+
+.btn-character-add {
+  display: block;
+  margin: 40px auto;
+  padding: 0.5rem 2.5rem;
+  font-family: "Roboto", sans-serif;
+  border-radius: 10px;
+  background-color: #4B7CFB;
+  color: white;
+  letter-spacing: 0.1rem;
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border: none;
+  cursor: pointer;
+  box-shadow: 15px 13px 26px -1px rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.character-card-container {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: #363333;
+  border-radius: 30px;
+  max-width: 1460px;
+  margin: auto;
+  align-items: center;
+  padding: 3rem 2rem;
+  box-shadow: 15px 13px 26px -1px rgba(0, 0, 0, 0.5);
+  word-break: break-all;
+}
+
+.character-img-single {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.character-name-single {
+  font-size: 2rem;
+  margin: 3rem;
+}
+
+.character-small-description-single {
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 100;
+  margin: 0 3rem;
+}
+
+.character-long-description-single {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 3rem;
+}
+
+.button-container {
+  margin-top: auto;
+}
+
+.button-character-update, .button-character-delete {
+  border-radius: 10px;
+  border: none;
+  margin: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-style: italic;
+  width: 8rem;
+}
+
+.button-character-update {
+  background-color: #4B7CFB;
+  color: white;
+}
+
+.button-character-delete {
+  background-color: #363333;
+  color: #BF3A30;
+  border: 1px solid #BF3A30;
+}
+
+.preview-container {
+  position: relative;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.character-image-preview {
+  width: 150px;
+  height: 150px;
+  border: 2px rgba(255, 255, 255, 0.75) solid;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.preview-text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.image-input-container {
+  position: relative;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+}
+
+.character-image-upload {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.character-image-upload-text {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.character-mini-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+  max-width: 1460px;
+  margin: auto;
+  margin-bottom: 10rem;
+}
+
+.character-card {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  margin: auto;
+  align-items: flex-start;
+  background-color: #363333;
+  border-radius: 30px;
+  width: 270px;
+  height: 360px;
+  box-shadow: 15px 13px 26px -1px rgba(0, 0, 0, 0.5);
+}
+
+.character-info {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  word-break: break-word;
+}
+
+.character-img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+  align-self: center;
+  border-radius: 50%;
+}
+
+.character-name {
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+
+.character-small-description {
+  margin-bottom: 12px;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.btn-character-view {
+  display: flex;
+  justify-self: right;
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+  background-color: #363333;
+  border: 1px solid white;
+  margin-top: auto;
+}
+
+.input-character-name, .input-character-small-description, .input-character-long-description {
+  margin: 0.5rem 0rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #727071;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+.input-character-name {
+  font-family: "Permanent Marker", cursive;
+  font-size: 2rem;
+}
+
+.text-input-container {
+  position: relative;
+  text-align: right;
+  width: 100%;
+}
+
+.max-character-display {
+  position: absolute;
+  color: white;
+  bottom: 1rem;
+  right: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.65rem;
+  font-style: italic;
+}
+
+.input-character-long-description {
+  height: 15rem;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+
+  .search-bar {
+    margin-left: 0rem;
+    margin-top: 1rem;
+  }
+
+  .character-card-container-single {
+    padding: 1.5rem 0;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .body-single {
+    padding: 1rem 1rem;
+  }
+}
+@media screen and (max-width: 475px) {
+  .character-name-single {
+    font-size: 1.5rem;
+  }
+
+  .character-name-single, .character-small-description-single, .character-long-description-single {
+    margin: 1rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  body {
+    padding: 1rem 1rem;
+  }
+
+  .character-img-single {
+    width: 100px;
+    height: 100px;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+
+
+/*# sourceMappingURL=style.45d2f177.css.map */
